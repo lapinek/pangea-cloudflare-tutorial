@@ -1,0 +1,38 @@
+{
+  "name": "transfer-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev .vercel/output/static",
+    "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static",
+    "build-cf-types": "wrangler types --env-interface CloudflareEnv env.d.ts"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.1.1",
+    "@mui/material": "^5.8.3",
+    "@pangeacyber/react-auth": "0.0.x",
+    "@pangeacyber/react-mui-audit-log-viewer": "0.0.73",
+    "@pangeacyber/react-mui-branding": "0.0.x",
+    "@pangeacyber/react-mui-store-file-viewer": "0.0.x",
+    "next": "14.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.11.0",
+    "@cloudflare/workers-types": "^4.20240405.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5",
+    "vercel": "^34.0.0",
+    "wrangler": "^3.50.0"
+  }
+}
